@@ -30,7 +30,7 @@ const Image = ({ src, className }) => {
       className={twMerge("relative aspect-auto w-full", className)}
       onClick={handleCopy}
     >
-      <img src={src} alt="" />
+      <img src={src} alt="" loading="lazy"/>
       {copied && (
         <div className="absolute inset-0 flex items-center justify-center">
           <p className="rounded-full bg-gray-900 px-4 py-2 text-base font-bold text-white">
