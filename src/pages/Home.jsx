@@ -1,10 +1,9 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
 import Image from "../components/Image";
-
+import Skeleton from "../components/Skeleton";
 import { navbarData, homepageData } from "../data";
 import { VIDEOS, IMAGES } from "../assets_data";
 

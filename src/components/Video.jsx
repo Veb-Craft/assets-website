@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import Skeleton from "./Skeleton.jsx";  // Ensure the import path is correct
 
 const useCopyToClipboard = (text) => {
   const [copied, setCopied] = useState(false);
@@ -15,7 +16,7 @@ const useCopyToClipboard = (text) => {
       (err) => {
         setMessage("Unable to copy to clipboard");
         console.error("Unable to copy to clipboard", err);
-      },
+      }
     );
   };
 
@@ -23,6 +24,7 @@ const useCopyToClipboard = (text) => {
 };
 
 const Video = ({ src, className, autoPlay = false }) => {
+  const [loading, setLoading] = useState(true);
   const { message, copied, handleCopy } = useCopyToClipboard(src);
   const videoRef = useRef(null);
 
@@ -45,6 +47,10 @@ const Video = ({ src, className, autoPlay = false }) => {
     }
   };
 
+  const handleLoadedData = () => {
+    setLoading(false);
+  };
+
   return (
     <div
       className={twMerge("relative aspect-auto w-full", className)}
@@ -52,14 +58,16 @@ const Video = ({ src, className, autoPlay = false }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {loading && <Skeleton className="h-[22rem] w-full" />}
       <video
         ref={videoRef}
         loop
         muted
         loading="lazy"
-        className="h-full w-full object-cover"
+        className={`h-full w-full object-cover ${loading ? 'hidden' : ''}`}
         playsInline
         autoPlay={autoPlay}
+        onLoadedData={handleLoadedData}
       >
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
