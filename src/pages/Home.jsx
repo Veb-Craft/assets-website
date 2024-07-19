@@ -1,36 +1,39 @@
 import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 
 import Gallery from "../components/Gallery";
 import Video from "../components/Video";
 import Image from "../components/Image";
 
-import { navbarData, homepageData } from "../data";
+import { homepageData } from "../data";
 import { VIDEOS, IMAGES } from "../assets_data";
 
 const Home = () => {
-  const videoIndices = useMemo(() => getRandomIndices(1, 10, 5), []);
-  const imageIndices = useMemo(() => getRandomIndices(1, 8, 5), []);
+  const videoIndices = useMemo(() => getRandomIndices(1, 10, 6), []);
+  const imageIndices = useMemo(() => getRandomIndices(1, 8, 6), []);
 
   return (
     <>
-      <div className="h-auto w-full "></div>
       <div className="h-auto w-full">
         <SectionHeading heading={homepageData.VIDEO_SECTION_HEADING} />
+        <SectionSubHeading subHeading={homepageData.VIDEO_SECTION_SUBHEADING} />
         <Gallery>
           {videoIndices.map((index) => (
-            <Video key={index} src={VIDEOS[index]} autoPlay={true} />
+            <Video
+              key={index}
+              src={VIDEOS[index]}
+              autoPlay={true}
+              onHomePage={true}
+            />
           ))}
-          <MoreCard navigationURL={navbarData.VIDEOS.url} />
         </Gallery>
       </div>
       <div className="h-auto w-full">
         <SectionHeading heading={homepageData.IMAGE_SECTION_HEADING} />
+        <SectionSubHeading subHeading={homepageData.IMAGE_SECTION_SUBHEADING} />
         <Gallery>
           {imageIndices.map((index) => (
-            <Image key={index} src={IMAGES[index]} />
+            <Image key={index} src={IMAGES[index]} onHomePage={true} />
           ))}
-          <MoreCard navigationURL={navbarData.IMAGES.url} />
         </Gallery>
       </div>
     </>
@@ -48,7 +51,7 @@ const getRandomIndices = (min, max, count) => {
   const range = max - min + 1;
   if (count > range) {
     throw new Error(
-      "Count cannot be greater than the range of possible numbers"
+      "Count cannot be greater than the range of possible numbers",
     );
   }
 
@@ -61,29 +64,15 @@ const getRandomIndices = (min, max, count) => {
 
 const SectionHeading = ({ heading }) => {
   return (
-    <h2 className="mx-auto mb-4 mt-8 px-4 text-left text-4xl font-bold sm:text-6xl">
+    <h2 className="mx-auto my-4 cursor-default select-none px-4 text-left text-4xl font-bold sm:text-6xl">
       {heading}
     </h2>
   );
 };
-
-const MoreCard = ({ navigationURL }) => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    if (navigationURL) {
-      navigate(navigationURL);
-    }
-  };
-
+const SectionSubHeading = ({ subHeading }) => {
   return (
-    <div
-      className="group flex h-full w-full items-center justify-center"
-      onClick={handleClick}
-    >
-      <h4 className="text-4xl font-bold duration-150 ease-in-out group-hover:scale-110 group-hover:text-blue-600">
-        View More...
-      </h4>
-    </div>
+    <h3 className="text xl mx-auto my-4 cursor-default select-none px-4 text-left font-medium sm:text-2xl">
+      {subHeading}
+    </h3>
   );
 };

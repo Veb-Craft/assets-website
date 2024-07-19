@@ -14,7 +14,7 @@ const Images = () => {
       </h2>
       <Gallery>
         {IMAGES.map((image, index) => (
-          <Image key={index} src={image} />
+          <Image key={index} src={image} lazyLoad={true} />
         ))}
       </Gallery>
     </div>

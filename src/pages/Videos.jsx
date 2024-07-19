@@ -14,7 +14,12 @@ const Videos = () => {
       </h2>
       <Gallery>
         {VIDEOS.map((video, index) => (
-          <Video key={index} src={video} className={"aspect-[4/3]"} />
+          <Video
+            key={index}
+            src={video}
+            className={"aspect-[4/3]"}
+            lazyLoad={true}
+          />
         ))}
       </Gallery>
     </div>
