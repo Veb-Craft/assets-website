@@ -89,23 +89,25 @@ const Video = ({
   return (
     <div
       ref={containerRef}
-      className={twMerge("relative aspect-auto w-full", className)}
+      className="relative h-full w-full"
       onClick={() => handleCopy(onHomePage)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {/* Skeleton */}
       {!videoLoaded && (
-        <div className="absolute inset-0 animate-pulse bg-gray-200" />
+        <div className="absolute inset-0 animate-pulse rounded-2xl bg-gray-400" />
       )}
       {shouldRender && (
         <video
           ref={videoRef}
           loop
           muted
-          className={`h-full w-full object-cover ${
-            videoLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className={twMerge(
+            "h-full w-full rounded-2xl object-cover shadow-2xl",
+            className,
+            ` ${videoLoaded ? "opacity-100" : "opacity-0"}`,
+          )}
           playsInline
           autoPlay={autoPlay}
           onLoadedData={handleLoadedData}
@@ -124,7 +126,7 @@ const Video = ({
       {onHomePage && (
         <div
           onClick={() => navigate(navbarData.VIDEOS.url)}
-          className="group absolute inset-0 flex items-center justify-center duration-200 ease-out hover:bg-gray-700/50"
+          className="group absolute inset-0 flex items-center justify-center rounded-2xl duration-200 ease-out hover:bg-gray-700/50"
         >
           <p className="scale-90 cursor-default select-none rounded-full px-4 py-2 text-4xl font-bold text-black opacity-0 transition-all ease-linear group-hover:scale-100 group-hover:opacity-100 group-hover:delay-100 group-hover:duration-200">
             More...

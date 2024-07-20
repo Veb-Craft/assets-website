@@ -4,6 +4,8 @@ import Gallery from "../components/Gallery";
 import Video from "../components/Video";
 import Image from "../components/Image";
 
+import { getRandomIndices } from "../util/functions";
+
 import { homepageData } from "../data";
 import { VIDEOS, IMAGES } from "../assets_data";
 
@@ -12,8 +14,8 @@ const Home = () => {
   const imageIndices = useMemo(() => getRandomIndices(1, 8, 6), []);
 
   return (
-    <>
-      <div className="h-auto w-full">
+    <section id="assets">
+      <section className="h-auto w-full">
         <SectionHeading heading={homepageData.VIDEO_SECTION_HEADING} />
         <SectionSubHeading subHeading={homepageData.VIDEO_SECTION_SUBHEADING} />
         <Gallery>
@@ -26,8 +28,8 @@ const Home = () => {
             />
           ))}
         </Gallery>
-      </div>
-      <div className="h-auto w-full">
+      </section>
+      <section className="h-auto w-full">
         <SectionHeading heading={homepageData.IMAGE_SECTION_HEADING} />
         <SectionSubHeading subHeading={homepageData.IMAGE_SECTION_SUBHEADING} />
         <Gallery>
@@ -35,32 +37,12 @@ const Home = () => {
             <Image key={index} src={IMAGES[index]} onHomePage={true} />
           ))}
         </Gallery>
-      </div>
-    </>
+      </section>
+    </section>
   );
 };
 
 export default Home;
-
-// Helper function to get random indices within a range
-const getRandomIndices = (min, max, count) => {
-  if (min > max) {
-    [min, max] = [max, min]; // Swap if min is greater than max
-  }
-
-  const range = max - min + 1;
-  if (count > range) {
-    throw new Error(
-      "Count cannot be greater than the range of possible numbers",
-    );
-  }
-
-  const indices = new Set();
-  while (indices.size < count) {
-    indices.add(Math.floor(Math.random() * range) + min);
-  }
-  return Array.from(indices);
-};
 
 const SectionHeading = ({ heading }) => {
   return (

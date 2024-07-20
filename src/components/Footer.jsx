@@ -11,7 +11,7 @@ import { footerData } from "../data";
 
 const Footer = () => {
   return (
-    <footer className="mx-auto mt-4 flex w-full flex-col items-center justify-center gap-2 px-4 py-2 md:flex-row md:px-2">
+    <footer className="mx-auto mt-4 flex w-full flex-col items-center justify-center gap-2 rounded-t-3xl bg-gray-300 px-4 py-2 text-black shadow-inner md:flex-row md:px-2">
       <div className="flex w-full flex-col justify-between gap-2 self-stretch">
         {/* Logo Container */}
         <div className="flex h-full items-center justify-start p-4">
