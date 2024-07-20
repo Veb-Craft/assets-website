@@ -32,9 +32,9 @@ const Hero = () => {
       </div>
 
       {/* Hero Content - Desktop */}
-      <div className="m-auto hidden h-full flex-col items-center justify-center p-10 md:flex">
+      <div className="m-auto hidden h-full select-none flex-col items-center justify-center px-16 py-10 md:flex">
         {/* Top Text container */}
-        <div className="grid -translate-y-10 grid-cols-3 grid-rows-3 px-2">
+        <div className="grid grid-cols-3 grid-rows-3 px-2">
           {/* Heading */}
           <h1 className="translate-y-16 self-center text-3xl font-bold">
             {heroData.HEADING}

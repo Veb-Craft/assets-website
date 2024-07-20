@@ -125,7 +125,7 @@ const Video = ({
       )}
       {onHomePage && (
         <div
-          onClick={() => navigate(navbarData.VIDEOS.url)}
+          onClick={() => navigate(navbarData.LINKS.VIDEOS.link)}
           className="group absolute inset-0 flex items-center justify-center rounded-2xl duration-200 ease-out hover:bg-gray-700/50"
         >
           <p className="scale-90 cursor-default select-none rounded-full px-4 py-2 text-4xl font-bold text-black opacity-0 transition-all ease-linear group-hover:scale-100 group-hover:opacity-100 group-hover:delay-100 group-hover:duration-200">

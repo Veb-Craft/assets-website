@@ -11,9 +11,12 @@ import { VIDEOS } from "../assets_data";
 const Videos = () => {
   return (
     <section className="h-auto w-full">
-      <h2 className="mx-auto mb-4 mt-8 px-4 text-left text-4xl font-bold sm:text-6xl">
+      <h2 className="mx-auto my-4 cursor-default select-none px-4 text-left text-4xl font-bold sm:text-6xl">
         {videospageData.PAGE_HEADING}
       </h2>
+      <h3 className="text xl mx-auto my-4 cursor-default select-none px-4 text-left font-medium sm:text-2xl">
+        {videospageData.PAGE_SUBHEADING}
+      </h3>
       <Gallery>
         {VIDEOS.map((video, index) => (
           <div key={index} className={`w-full ${getMediaAspectRatio(index)}`}>

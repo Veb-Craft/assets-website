@@ -1,18 +1,38 @@
 export const navbarData = {
-  HOME: {
-    title: "Home",
-    url: "/",
-  },
-  VIDEOS: {
-    title: "Videos",
-    url: "/videos",
-  },
-  IMAGES: {
-    title: "Images",
-    url: "/images",
+  LOGO: "/logo.png",
+  LINKS: {
+    HOME: {
+      name: "Home",
+      link: "/",
+    },
+    VIDEOS: {
+      name: "Videos",
+      link: "/videos",
+    },
+    IMAGES: {
+      name: "Images",
+      link: "/images",
+    },
+    TEMPLATES: {
+      name: "Templates",
+      link: "#",
+    },
+    COMPONENTS: {
+      name: "Components",
+      link: "#",
+    },
   },
 };
 
+export const basicNavbarData = {
+  LOGO: "/logo.png",
+  LINKS: [
+    { name: "Home", link: "/" },
+    { name: "Terms of Service", link: "/terms-of-service" },
+    { name: "Privacy Policy", link: "/privacy-policy" },
+    { name: "Disclaimer", link: "/disclaimer" },
+  ],
+};
 export const ADDITIONAL_LINKS = {
   Vebcraft: "#",
   Templates: "#",
@@ -23,7 +43,7 @@ export const ADDITIONAL_LINKS = {
 };
 
 export const heroData = {
-  BACKGROUND_IMAGE: "./background.png",
+  BACKGROUND_IMAGE: "/background.png",
   HEADING: "Premium Media Files for Visionary Designers. ",
   TAGS: "INSPIRE\nCREATE\nINNOVATE",
   SUBHEADING: "Curated \nCollection of \nAbstract",
@@ -40,27 +60,34 @@ export const heroData = {
   },
 };
 export const homepageData = {
-  VIDEO_SECTION_HEADING: "Videos",
-  VIDEO_SECTION_SUBHEADING:
-    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi et eligendi qui. Mollitia, eum totam? Id est reiciendis neque, placeat tenetur fugit perspiciatis dicta mollitia reprehenderit quas. Deserunt, et officia.",
-  IMAGE_SECTION_HEADING: "Images",
-  IMAGE_SECTION_SUBHEADING:
-    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi et eligendi qui. Mollitia, eum totam? Id est reiciendis neque, placeat tenetur fugit perspiciatis dicta mollitia reprehenderit quas. Deserunt, et officia.",
+  VIDEO_SECTION_HEADING: "Visual Symphony",
+  VIDEO_SECTION_SUBHEADING: " Elevate Your Website with Mesmerizing Motion Art",
+  IMAGE_SECTION_HEADING: "Artistic Visions",
+  IMAGE_SECTION_SUBHEADING: " Enhance Your Digital Space with Stunning Visuals",
 };
 export const videospageData = {
-  PAGE_HEADING: "Videos",
+  PAGE_HEADING: "Captivating Motion Art",
+  PAGE_SUBHEADING:
+    "Integrate These Videos to Transform and Energize Your Digital Projects",
 };
 export const imagespageData = {
-  PAGE_HEADING: "Images",
+  PAGE_HEADING: "Stunning Visual Creations",
+  PAGE_SUBHEADING:
+    "Incorporate These Images to Elevate and Enhance Your Online Presence",
 };
 
 export const footerData = {
+  LOGO_DATA: {
+    logo: "/logo.png",
+    name: "VebCraft",
+    redirectURL: "#",
+  },
   SOCIAL_MEDIA_LINKS: {
-    facebook: "#",
-    twitter: "#",
-    instagram: "#",
-    linkedin: "#",
-    github: "#",
+    facebook: "https://www.facebook.com/people/VebCraft/61559890591650/",
+    twitter: "https://x.com/Veb_Craft",
+    instagram: "https://www.instagram.com/veb_craft/",
+    linkedin: "https://www.linkedin.com/company/vebcraft/",
+    github: "https://github.com/Veb-Craft",
   },
   // icons defined directly in the code
   ADDITIONAL_LINKS: [

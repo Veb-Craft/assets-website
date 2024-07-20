@@ -11,13 +11,16 @@ import { IMAGES } from "../assets_data";
 const Images = () => {
   return (
     <section className="h-auto w-full">
-      <h2 className="mx-auto mb-4 mt-8 px-4 text-left text-4xl font-bold sm:text-6xl">
+      <h2 className="mx-auto my-4 cursor-default select-none px-4 text-left text-4xl font-bold sm:text-6xl">
         {imagespageData.PAGE_HEADING}
       </h2>
+      <h3 className="text xl mx-auto my-4 cursor-default select-none px-4 text-left font-medium sm:text-2xl">
+        {imagespageData.PAGE_SUBHEADING}
+      </h3>
       <Gallery>
-        {IMAGES.map((image, index) => (
+        {IMAGES.map((video, index) => (
           <div key={index} className={`w-full ${getMediaAspectRatio(index)}`}>
-            <Image src={image} lazyLoad={true} />
+            <Image key={index} src={video} lazyLoad={true} />
           </div>
         ))}
       </Gallery>

@@ -1,7 +1,10 @@
 // Helper function to get different aspects ration to build the masonary layout
 export const getMediaAspectRatio = (index) => {
-  if (index % 3 === 0) return "aspect-[3/4]";
-  if (index % 5 === 0) return "aspect-[4/3]";
+  if (index === 0) return "aspect-[1/1]";
+  if (index % 2 === 0) return "aspect-[2/3]";
+  if (index % 3 === 0) return "aspect-[3/2]";
+  if (index % 5 === 0) return "aspect-[3/4]";
+  if (index % 7 === 0) return "aspect-[4/3]";
   if (index % 7 === 0) return "aspect-[5/3]";
   if (index % 11 === 0) return "aspect-[3/5]";
   return "aspect-[1/1]";

@@ -20,12 +20,9 @@ const Home = () => {
         <SectionSubHeading subHeading={homepageData.VIDEO_SECTION_SUBHEADING} />
         <Gallery>
           {videoIndices.map((index) => (
-            <Video
-              key={index}
-              src={VIDEOS[index]}
-              autoPlay={true}
-              onHomePage={true}
-            />
+            <div key={index} className="aspect-square w-full">
+              <Video src={VIDEOS[index]} autoPlay={true} onHomePage={true} />
+            </div>
           ))}
         </Gallery>
       </section>
@@ -34,7 +31,9 @@ const Home = () => {
         <SectionSubHeading subHeading={homepageData.IMAGE_SECTION_SUBHEADING} />
         <Gallery>
           {imageIndices.map((index) => (
-            <Image key={index} src={IMAGES[index]} onHomePage={true} />
+            <div key={index} className="aspect-square w-full">
+              <Image src={IMAGES[index]} onHomePage={true} />
+            </div>
           ))}
         </Gallery>
       </section>
