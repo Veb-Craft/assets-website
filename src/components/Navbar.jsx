@@ -55,23 +55,23 @@ const Navbar = () => {
         transition={{
           duration: 0.2,
         }}
-        className="fixed inset-x-0 top-10 z-[5000] mx-auto flex min-w-[50%] max-w-fit items-center justify-between gap-4 rounded-full border border-transparent bg-black px-3 py-4 md:gap-10 md:px-8"
+        className="fixed inset-x-0 top-10 z-[5000] mx-auto flex min-w-[50%] max-w-fit items-center justify-between rounded-full border border-transparent bg-black px-3 py-4 md:gap-10 md:px-8"
       >
         <div className="hidden max-h-7 items-center justify-center md:flex">
           <img
-            className="aspect-square size-12 object-contain"
+            className="aspect-square size-12 object-contain duration-700 ease-in-out hover:rotate-[360deg] hover:scale-125"
             src={navbarData.LOGO}
             alt="VebCraft Logo"
           />
         </div>
-        <nav className="flex items-center justify-evenly gap-1 md:gap-8">
+        <nav className="flex items-center justify-evenly gap-2 md:gap-8">
           {NAV_LINKS.map((navItem, idx) => (
             <ul
               key={`link=${idx}`}
               onClick={() => handleNavigate(navItem.link)}
-              className="relative flex cursor-pointer select-none items-center p-1 text-white hover:opacity-90"
+              className="relative flex cursor-pointer select-none items-center py-1 text-white hover:-translate-y-1 hover:scale-105 hover:opacity-80"
             >
-              <span className="text-sm md:text-xl">{navItem.name}</span>
+              <span className="text-[13px] md:text-xl">{navItem.name}</span>
             </ul>
           ))}
         </nav>

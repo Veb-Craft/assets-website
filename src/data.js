@@ -80,7 +80,7 @@ export const footerData = {
   LOGO_DATA: {
     logo: "/logo.png",
     name: "VebCraft",
-    redirectURL: "#",
+    redirectURL: "/",
   },
   SOCIAL_MEDIA_LINKS: {
     facebook: "https://www.facebook.com/people/VebCraft/61559890591650/",
@@ -156,4 +156,4 @@ VebCraft provides assets "as is" without any warranties, express or implied. Veb
 The assets available on VebCraft are sourced from third-party platforms such as Dribble, Pinterest, and others. VebCraft does not guarantee the accuracy, reliability, or completeness of any third-party content.
 
 ## 3. Right to Modify
-VebCraft reserves the right to modify these Terms of Service, Privacy Policy, and Disclaimers at any time. Any changes will be posted on this page, and your continued use of the service constitutes acceptance of those changes.`;
+VebCraft reserves the right to modify the Terms of Service, Privacy Policy, and Disclaimers at any time. Any changes will be posted on this page, and your continued use of the service constitutes acceptance of those changes.`;

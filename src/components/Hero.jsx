@@ -32,15 +32,15 @@ const Hero = () => {
       </div>
 
       {/* Hero Content - Desktop */}
-      <div className="m-auto hidden h-full select-none flex-col items-center justify-center px-16 py-10 md:flex">
+      <div className="m-auto hidden h-full select-none flex-col items-center justify-center px-16 pb-28 pt-20 max-lg:gap-10 md:flex lg:pb-10">
         {/* Top Text container */}
-        <div className="grid grid-cols-3 grid-rows-3 px-2">
+        <div className="grid grid-cols-2 grid-rows-3 px-2 lg:grid-cols-3">
           {/* Heading */}
-          <h1 className="translate-y-16 self-center text-3xl font-bold">
+          <h1 className="translate-y-10 self-center text-3xl font-bold lg:translate-y-16">
             {heroData.HEADING}
           </h1>
           {/* Divider */}
-          <div className="col-span-2 row-start-2 h-1 translate-y-8 self-center rounded-full bg-white/50" />
+          <div className="col-span-2 row-start-2 h-1 translate-y-5 self-center rounded-full bg-white/50 lg:translate-y-8" />
           {/* Tags */}
           <span className="col-start-2 row-start-3 flex justify-end self-center">
             <p className="whitespace-pre-line text-start text-xl">
@@ -52,31 +52,33 @@ const Hero = () => {
         {/* Bottom container */}
         <div className="grid w-full grid-cols-2 p-2">
           {/* Subheading */}
-          <h2 className="self-start whitespace-pre-line text-5xl font-bold">
+          <h2 className="self-center whitespace-pre-line text-4xl font-bold lg:text-6xl">
             {heroData.SUBHEADING}
           </h2>
-          <div className="grid w-full grid-cols-2 grid-rows-3">
+          <div className="grid w-full grid-cols-1 grid-rows-2 lg:grid-cols-2 lg:grid-rows-3">
             {/* Tagline */}
-            <h3 className="row-start-2 text-end text-lg">{heroData.TAGLINE}</h3>
+            <h3 className="row-start-1 text-end text-lg lg:row-start-2">
+              {heroData.TAGLINE}
+            </h3>
             {/* CTA */}
 
             <ConditionalLink
-              className="peer row-start-3 text-end text-3xl underline duration-150 ease-in hover:scale-105"
+              className="peer row-start-2 text-end text-3xl underline duration-150 ease-in hover:scale-105 lg:row-start-3"
               href="#assets"
             >
               {heroData.CTA}
             </ConditionalLink>
             {/* Social Proof */}
-            <div className="col-start-2">
+            <div className="col-start-2 max-lg:hidden">
               <SocialProof />
             </div>
             {/* Arrow */}
-            <div className="col-start-2 row-span-2 row-start-2 flex items-center justify-center transition-all duration-150 ease-in peer-hover:-rotate-45">
+            <div className="col-start-2 row-span-2 row-start-2 flex items-center justify-center transition-all duration-150 ease-in peer-hover:-rotate-45 max-lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth=".5"
+                strokeWidth="0.75"
                 stroke="currentColor"
                 className="size-20"
               >
